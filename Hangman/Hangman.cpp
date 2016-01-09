@@ -43,11 +43,11 @@ int main()
  	while(wrong!= max_letters && WordSoFar!= theWord)
 	 {
  		cout<<"Enter your guess: ";
-    	cin>>guess;
+    		cin>>guess;
     	
-    	cout<<endl;
+    		cout<<endl;
     	
-    	guess = toupper(guess);
+    		guess = toupper(guess);
     	
  		while(usedwords.find(guess)!=string::npos)
  		{
@@ -57,7 +57,7 @@ int main()
  			cin>>guess;
  			
  			cout<<endl;
- 		}
+ 		}	
  		
  		usedwords = usedwords +" "+ guess;
  	
@@ -74,7 +74,7 @@ int main()
  				
  				cout<<WordSoFar[i];
  			}
- 			
+ 				
  			cout<<endl;
  		}
  		
@@ -83,11 +83,11 @@ int main()
  			cout<<"You guessed it Wrong \n\n";
  			
  			wrong++;
- 			
+ 		
  			cout<<"You Have "<<max_letters-wrong<<" Chances Left"<<endl;
  		}
  		
- 		cout<<"\n Used Letters: "<<usedwords<<"\n\n";
+ 			cout<<"\n Used Letters: "<<usedwords<<"\n\n";
  	}
  	
  	if(WordSoFar == theWord)
