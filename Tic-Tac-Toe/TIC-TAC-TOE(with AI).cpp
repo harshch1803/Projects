@@ -42,9 +42,9 @@ int main()
 	char turn = X;
 	
 	//Vector to Store the Board.
-    vector<char>board(Max_Squares,EMPTY);
+	vector<char>board(Max_Squares,EMPTY);
     
-    //Display Instructions.
+    	//Display Instructions.
 	instructions();	
 	
 	//Returns 'X' or 'O' based on Player's Choice.
@@ -70,20 +70,20 @@ int main()
   		}
   		
   		//Check if it's Computer's Turn.
-    	else
-    	{
-    		//Returns the Location decided by the Computer.
-    		move = compMove(board,comp);
+    		else
+    		{
+    			//Returns the Location decided by the Computer.
+    			move = compMove(board,comp);
     		
-    		//Update the move on the Board.
-    		board[move] = comp;
-    	}
+    			//Update the move on the Board.
+    			board[move] = comp;
+    		}
     	
-    	//Switch the Turn.
-   		 turn = opposition(turn);
-   		 
+    		//Switch the Turn.
+   		turn = opposition(turn);
+   		
    		//Display the Board. 
-    	displayBoard(board);
+    		displayBoard(board);
 	}
 	
 	 announceWinner(winner(board),comp,human);
@@ -220,12 +220,12 @@ char winner(const vector<char> &board)
 			winner = board[Winning_Rows[r][0]];
 			break;
 		}
-    }
+    	}
     
-    if( count(board.begin(),board.end(),EMPTY)== 0 )
-    {
-    	winner = TIE;
-    }
+    	if( count(board.begin(),board.end(),EMPTY)== 0 )
+    	{
+    		winner = TIE;
+    	}
     
 	return winner;
 }
@@ -321,24 +321,24 @@ int compMove(vector<char> board,char comp)
 void announceWinner(char winner, char comp, char human)
 {
 	if (winner == comp)
-    {
-        cout << winner << "'s won!\n";
-        cout << "As I predicted, human, I am triumphant once more -- proof\n";
-        cout << "that computers are superior to humans in all regards.\n";
-    }
+     	{
+		 cout << winner << "'s won!\n";
+		 cout << "As I predicted, human, I am triumphant once more -- proof\n";
+		 cout << "that computers are superior to humans in all regards.\n";
+    	}
 
 	else if (winner == human)
-    {
-        cout << winner << "'s won!\n";
-        cout << "No, no!  It cannot be!  Somehow you tricked me, human.\n";
-        cout << "But never again!  I, the computer, so swear it!\n";
-    }
+	{
+		 cout << winner << "'s won!\n";
+		 cout << "No, no!  It cannot be!  Somehow you tricked me, human.\n";
+		 cout << "But never again!  I, the computer, so swear it!\n";
+	 }
 
 	else
-    {
-        cout << "It's a tie.\n";
-        cout << "You were most lucky, human, and somehow managed to tie me.\n";
-        cout << "Celebrate... for this is the best you will ever achieve.\n";
+	{
+        	cout << "It's a tie.\n";
+		 cout << "You were most lucky, human, and somehow managed to tie me.\n";
+        	cout << "Celebrate... for this is the best you will ever achieve.\n";
 	}
 }
 
