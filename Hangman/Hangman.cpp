@@ -1,11 +1,10 @@
-#include <cmath>
+
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include<cstdlib>
 #include<ctime>
-#include<cctype>
 #include<conio.h>
+
 using namespace std;
 int main()
 {
