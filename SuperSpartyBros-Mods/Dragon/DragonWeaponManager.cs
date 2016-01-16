@@ -40,6 +40,7 @@ public class DragonWeaponManager : MonoBehaviour
 
 	}
 
+	//called by dragonDeath Script when the player jumps on the back of the dragon.
 	public void NoFireball()
 	{
 		dragonDead = true;
