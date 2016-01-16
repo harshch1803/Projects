@@ -63,13 +63,13 @@ public class Dragon : MonoBehaviour
 		if ((myWaypoints.Length != 0) && (_moving))
 		{
 			
-			// make sure the enemy is facing the waypoint (based on previous movement)
+			// make sure the dragon is facing the waypoint (based on previous movement)
 			Flip (_vx);
 			
-			// determine distance between waypoint and enemy
+			// determine distance between waypoint and dragon
 			_vx = myWaypoints[_myWaypointIndex].transform.position.x-_transform.position.x;
 			
-			// if the enemy is close enough to waypoint, make it's new target the next waypoint
+			// if the dragon is close enough to waypoint, make it's new target the next waypoint
 			if (Mathf.Abs(_vx) <= 0.05f)
 			{
 				// At waypoint so stop moving
@@ -94,17 +94,14 @@ public class Dragon : MonoBehaviour
 
 			else 
 			{
-				// enemy is moving
-				//_animator.SetBool("Moving", true);
-				
-				// Set the enemy's velocity to moveSpeed in the x direction.
+				// Set the dragon's velocity to moveSpeed in the x direction.
 				_rigidbody.velocity = new Vector2(_transform.localScale.x * moveSpeed, _rigidbody.velocity.y);
 			}
 			
 		}
 	}
 	
-	// flip the enemy to face torward the direction he is moving in
+	// flip the dragon to face torward the direction he is moving in
 	void Flip(float _vx) 
 	{
 		
@@ -126,8 +123,9 @@ public class Dragon : MonoBehaviour
 		if ((collision.tag == "Player"))
 		{
 			CharacterController2D player = collision.gameObject.GetComponent<CharacterController2D>();
-			if (player.playerCanMove) {
-				// Make sure the enemy is facing the player on attack
+			if (player.playerCanMove) 
+			{
+				// Make sure the dragon is facing the player on attack
 				Flip(collision.transform.position.x-_transform.position.x);
 				
 				// attack sound
