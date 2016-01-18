@@ -26,6 +26,7 @@ public class TimeCounter : MonoBehaviour
 	
 	}
 	
+	//displays the rounded value of the timer.
 	void timecountdown()
 	{
 		time.text = "X"+Mathf.RoundToInt(timer);
