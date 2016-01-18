@@ -11,6 +11,8 @@ public class IntroControl : MonoBehaviour
 	{
 		Application.LoadLevel(1);
 	}
+	
+	
 	public void quitgame()
 	{
 		Application.Quit();
