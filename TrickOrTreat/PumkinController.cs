@@ -5,20 +5,24 @@ public class PumkinController : MonoBehaviour
 {
 
 	public Camera cam;
-	float maxwidth;
 	public GameObject explosion;
+	
 	Scorecount scorecount;
 	HighScore highscore;
 	TimeCounter timecounter;
+	
+	float maxwidth;
 
 	// Use this for initialization
 	void Start () 
 	{
 		if(cam==null)
 			cam=Camera.main;
+			
 		scorecount = GameObject.Find("GameController").GetComponent<Scorecount>();
 		timecounter = GameObject.Find("GameController").GetComponent<TimeCounter>();
 		highscore = GameObject.Find("GameController").GetComponent<HighScore>();
+		
 		Vector3 screenlimit = new Vector3(Screen.width,Screen.height,0f);
 		Vector3 worldlimit = cam.ScreenToWorldPoint(screenlimit);
 		 maxwidth= worldlimit.x-1.1f;
@@ -39,6 +43,7 @@ public class PumkinController : MonoBehaviour
 	{
 		if(other.gameObject.tag=="Skull")
 			scorecount.scorecounter = scorecount.scorecounter -2;
+		
 		else if(other.gameObject.tag =="Spider")
 		{
 			timecounter.timer = timecounter.timer - 4f;
@@ -51,25 +56,31 @@ public class PumkinController : MonoBehaviour
 			Instantiate(explosion,transform.position,Quaternion.identity);
 
 		}
+		
 		highscore.temp=scorecount.scorecounter;
 	}
+	
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.tag =="Apple")
 			timecounter.timer = timecounter.timer + 3f;
+		
 		else if(other.gameObject.tag =="Spider")
 		{
 			timecounter.timer = timecounter.timer + 6f;
 		    scorecount.scorecounter=scorecount.scorecounter+4;
 		}
+	
 		else if(other.gameObject.tag =="Skull")
 		{
 			scorecount.scorecounter= scorecount.scorecounter+4;
 		}
+		
 		else if(other.gameObject)
 		{
 			scorecount.scorecounter++;
 		}
+		
 		Destroy(other.gameObject);
 		highscore.temp=scorecount.scorecounter;
 	}
