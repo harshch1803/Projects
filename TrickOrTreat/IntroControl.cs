@@ -3,8 +3,8 @@ using System.Collections;
 
 public class IntroControl : MonoBehaviour
 {
-	public GameObject start,quit;
-
+	public GameObject start;
+	public GameObject quit;
 
 	// Use this for initialization
 	public void startgame()
