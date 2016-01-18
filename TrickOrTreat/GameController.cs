@@ -35,8 +35,6 @@ public class GameController : MonoBehaviour
 		instruction.enabled=true;
 		
 		StartCoroutine("spawn");
-	
-
 	}
 
 	IEnumerator spawn()
