@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
 		//converts screen limits to world limits and stores it in a vector.
 		Vector3 worldlimit = cam.ScreenToWorldPoint(screenlimit);
 		
-		//(-0.9f),so that entire pumpkin stays inside the screenlimit.
+		//(-0.9f),so that candies are spawned inside the screenlimit.
 		maxwidth = worldlimit.x - 0.9f;
 		
 		//display instructions before game starts.
