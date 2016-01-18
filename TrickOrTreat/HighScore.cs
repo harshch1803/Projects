@@ -15,10 +15,10 @@ public class HighScore : MonoBehaviour
 		highscore.text="HIGHSCORE: " +(topscore);
 	}
 	
-	
+	//checks if current score is greater than the Highscore.
 	public void compare()
 	{
-		if(temp>topscore)
+		if(temp > topscore)
 		{
 			topscore=temp;
 			PlayerPrefs.SetInt("HIGHSCORE",topscore);
